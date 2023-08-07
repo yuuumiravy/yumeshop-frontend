@@ -1,18 +1,20 @@
 import useAspidaSWR from '@aspida/swr';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
+import { SimpleCard, WideCard } from 'src/components/Card';
+import { Container } from 'src/components/Layout';
+import { List } from 'src/components/List/List';
 import { apiClient } from 'src/libs/apiClient';
 
-import { Container, Main, Title, TokenTest } from 'src/styles/home';
+import { Main, Section, SectionTitle } from 'src/styles/home';
 
 const Home: NextPage = () => {
-  const { data: shopItems } = useAspidaSWR(apiClient.shop_items);
-
-  console.log(shopItems);
+  const { data: campaigns } = useAspidaSWR(apiClient.campaigns);
+  const { data: categories } = useAspidaSWR(apiClient.categories);
+  const { data: informations } = useAspidaSWR(apiClient.informations);
 
   return (
-    <Container>
+    <>
       <Head>
         <title>Yumeshop</title>
         <meta name="description" content="" />
@@ -20,18 +22,50 @@ const Home: NextPage = () => {
       </Head>
 
       <Main>
-        <Image
-          src="/shopping-bag.jpg"
-          alt="買い物袋"
-          width={600}
-          height={600}
-        />
-
-        <TokenTest>
-          <Title>Welcome to Yumeshop</Title>
-        </TokenTest>
+        <Container>
+          <Section>
+            <SectionTitle>キャンペーン</SectionTitle>
+            <List direction="row" wrap="nowrap">
+              {campaigns?.map((campaign) => (
+                <SimpleCard
+                  key={campaign.id}
+                  content={campaign.name}
+                  thumbnail={campaign.thumbnail}
+                  link="/"
+                />
+              ))}
+            </List>
+          </Section>
+          <Section>
+            <SectionTitle>お知らせ</SectionTitle>
+            <List direction="column">
+              {informations?.map((information) => (
+                <WideCard
+                  key={information.id}
+                  content={information.title}
+                  tags={information.tags}
+                  date={information.announced_at}
+                  link="/"
+                />
+              ))}
+            </List>
+          </Section>
+          <Section>
+            <SectionTitle>カテゴリー</SectionTitle>
+            <List direction="row" wrap="nowrap">
+              {categories?.map((category) => (
+                <SimpleCard
+                  key={category.id}
+                  content={category.name}
+                  thumbnail={category.thumbnail}
+                  link="/"
+                />
+              ))}
+            </List>
+          </Section>
+        </Container>
       </Main>
-    </Container>
+    </>
   );
 };
 

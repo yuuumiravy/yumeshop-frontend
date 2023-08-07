@@ -5,18 +5,9 @@ export const TokenTest = styled.div`
   background: ${colors.YumeGreen};
 `;
 
-export const Container = styled.div`
-  padding: 0 2rem;
-`;
-
 export const Main = styled.main`
   min-height: 100vh;
   padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `;
 
 export const Title = styled.h1`
@@ -34,4 +25,12 @@ export const Title = styled.h1`
   a:active {
     text-decoration: underline;
   }
+`;
+
+export const Section = styled.section`
+  margin: 32px 0;
+`;
+
+export const SectionTitle = styled.h2`
+  margin-bottom: 16px;
 `;
