@@ -2,6 +2,7 @@
 
 .wrapper {
   max-width: 1152px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 16px;
   @include mq(md) {
