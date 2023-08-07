@@ -8,6 +8,7 @@
   width: max-content;
   display: flex;
   max-width: 343px;
+  background-color: #fff;
   @include mq(md) {
     max-width: 704px;
   }

@@ -12,6 +12,7 @@
   flex-direction: column;
   gap: 8px;
   max-width: 343px;
+  background-color: #fff;
   @include mq(md) {
     max-width: 704px;
   }
