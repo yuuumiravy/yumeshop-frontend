@@ -1,0 +1,12 @@
+@import 'src/styles/variables.scss';
+
+.list {
+  display: flex;
+  flex-direction: var(--direction, col);
+  flex-wrap: var(--wrap, wrap);
+  list-style: none;
+  gap: 8px;
+  @include mq(lg) {
+    gap: 16px;
+  }
+}
