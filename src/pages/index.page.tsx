@@ -2,6 +2,8 @@ import useAspidaSWR from '@aspida/swr';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { SimpleCard, WideCard } from 'src/components/Card';
+import { Footer } from 'src/components/Footer';
+import { Header } from 'src/components/Header';
 import { Container } from 'src/components/Layout';
 import { List } from 'src/components/List/List';
 import { apiClient } from 'src/libs/apiClient';
@@ -22,6 +24,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Main>
+        <Header />
         <Container>
           <Section>
             <SectionTitle>キャンペーン</SectionTitle>
@@ -64,6 +67,7 @@ const Home: NextPage = () => {
             </List>
           </Section>
         </Container>
+        <Footer />
       </Main>
     </>
   );

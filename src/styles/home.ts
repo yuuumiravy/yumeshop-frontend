@@ -7,7 +7,7 @@ export const TokenTest = styled.div`
 
 export const Main = styled.main`
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 4rem 0 0;
 `;
 
 export const Title = styled.h1`
