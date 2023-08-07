@@ -1,5 +1,13 @@
+@import 'src/styles/variables.scss';
+
 .wrapper {
   max-width: 1152px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 16px;
+  @include mq(md) {
+    padding: 0 32px;
+  }
+  @include mq(lg) {
+    padding: 0 64px;
+  }
 }
