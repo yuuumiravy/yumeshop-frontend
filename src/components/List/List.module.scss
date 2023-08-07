@@ -5,6 +5,7 @@
   flex-direction: var(--direction, col);
   flex-wrap: var(--wrap, wrap);
   list-style: none;
+  overflow: auto;
   gap: 8px;
   @include mq(lg) {
     gap: 16px;
