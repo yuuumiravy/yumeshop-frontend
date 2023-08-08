@@ -21,7 +21,7 @@ export const WideCard: React.FC<WideCardProps> = ({
       <div className={styles.wrapper}>
         <div className={styles.heading}>
           <time dateTime={date} className={styles.date}>
-            {date}
+            {new Date(date).toLocaleDateString()}
           </time>
           <Tags tags={tags} />
         </div>
