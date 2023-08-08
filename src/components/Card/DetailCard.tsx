@@ -55,11 +55,11 @@ export const DetailCard: React.FC<DetailCardProps> = ({
               税抜
               {price.discounted && (
                 <span className={styles.content__price__selling}>
-                  {price.selling_price}→
+                  {price.original_price}→
                 </span>
               )}
               <span className={styles.content__price__original}>
-                {price.original_price}
+                {price.discounted ? price.selling_price : price.original_price}
               </span>
               <span className={styles.content__price__suffix}>円</span>
             </div>
