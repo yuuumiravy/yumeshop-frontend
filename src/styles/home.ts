@@ -7,6 +7,9 @@ export const TokenTest = styled.div`
 
 export const Main = styled.main`
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 4rem 0 0;
 `;
 
