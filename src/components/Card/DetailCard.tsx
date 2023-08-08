@@ -38,7 +38,7 @@ export const DetailCard: React.FC<DetailCardProps> = ({
         </figure>
         <div className={styles.content}>
           <div className={styles.content__heading}>
-            <p>{content}</p>
+            <p className={styles.content__heading__title}>{content}</p>
             <Tags tags={tags} />
           </div>
           <div

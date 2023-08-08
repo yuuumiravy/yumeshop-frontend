@@ -11,7 +11,8 @@ export default meta;
 type Story = StoryObj<typeof DetailCard>;
 export const Default: Story = {
   args: {
-    content: 'テキストテキストテキストテキストテキストテキスト',
+    content:
+      'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
     thumbnail: 'https://placehold.jp/150x150.png',
     tags: [
       {
