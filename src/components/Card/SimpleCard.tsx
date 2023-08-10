@@ -2,13 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './SimpleCard.module.scss';
 
-export type CardProps = {
+export type SimpleCardProps = {
   content: string;
   thumbnail: string;
   link: string;
 };
 
-export const SimpleCard: React.FC<CardProps> = ({
+export const SimpleCard: React.FC<SimpleCardProps> = ({
   content,
   thumbnail,
   link,
