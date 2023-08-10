@@ -22,9 +22,12 @@ export const List: React.FC<ListProps> = ({
         } as React.CSSProperties
       }
     >
-      {Children.map(children, (child, index) => (
-        <li key={index}>{child}</li>
-      ))}
+      {Children.map(children, (child, index) => {
+        if (isValidElement(child) && child.key) {
+          return <li key={child.key}>{child}</li>;
+        }
+        return <li key={index}>{child}</li>;
+      })}
     </ul>
   );
 };
